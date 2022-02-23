@@ -12,10 +12,10 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " color schemes
-Plug 'arcticicestudio/nord-vim'
-Plug 'nanotech/jellybeans.vim'
-Plug 'w0ng/vim-hybrid'
-Plug 'ayu-theme/ayu-vim'
+Plugin 'arcticicestudio/nord-vim'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'w0ng/vim-hybrid'
+Plugin 'ayu-theme/ayu-vim'
 
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
@@ -53,7 +53,7 @@ map <Leader>t :CtrlPBuffer<CR>
  \ 'file': '\v\c\.(swf|bak|png|gif|js|mov|ico|jpg|pdf|jrxml)$'
   \ }
 
- Plug 'easymotion/vim-easymotion'
+Plugin 'easymotion/vim-easymotion'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
