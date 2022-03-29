@@ -105,3 +105,5 @@ addgitremote() {
 # need: sudo apt install xclip
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
+
+export EDITOR=vim
