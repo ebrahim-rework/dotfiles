@@ -2,48 +2,49 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 set number
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+call plug#begin()
 
 " color schemes
-Plugin 'arcticicestudio/nord-vim'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'w0ng/vim-hybrid'
-Plugin 'ayu-theme/ayu-vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'nanotech/jellybeans.vim'
+Plug 'w0ng/vim-hybrid'
+Plug 'ayu-theme/ayu-vim'
 
 " plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'L9'
+Plug 'L9'
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 " plugin for perl syntax, template toolkit
-Plugin 'vim-perl/vim-perl'
+Plug 'vim-perl/vim-perl'
 " plugin for javascript syntax
-Plugin 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript'
 " plugin for json syntax
-Plugin 'elzr/vim-json'
+Plug 'elzr/vim-json'
 " plugin to easy find file
-Plugin 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
 " tree explorer
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 " Status line
-Plugin 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
 " HTML Syntax
-Plugin 'othree/html5.vim'
+Plug 'othree/html5.vim'
 " Mojo html.ep
-Plugin 'yko/mojo.vim'
+Plug 'yko/mojo.vim'
 " Markdown highlighter
-Plugin 'plasticboy/vim-markdown'
+Plug 'plasticboy/vim-markdown'
 " Code tags
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
+" fzf
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" easymotion
+Plug 'easymotion/vim-easymotion'
+
+" All of your Plugins must be added before the following line
+call plug#end()
+
 map <Leader>t :CtrlPBuffer<CR>
  let g:ctrlp_map = '<C-p>'
  let g:ctrlp_working_path_mode = 0 " don’t manage working directory.
@@ -53,22 +54,7 @@ map <Leader>t :CtrlPBuffer<CR>
  \ 'file': '\v\c\.(swf|bak|png|gif|js|mov|ico|jpg|pdf|jrxml)$'
   \ }
 
-Plugin 'easymotion/vim-easymotion'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
 set autoindent
 set backspace=indent,eol,start
@@ -104,6 +90,7 @@ set colorcolumn=80
 syntax on
 
 colorscheme jellybeans
+set background=dark
 
 highlight   CursorColumn  term=NONE    cterm=none ctermbg=232
 highlight   CursorLine    term=NONE    cterm=bold ctermbg=8
